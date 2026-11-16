@@ -7,7 +7,7 @@
     @endif
     <a class="btn btn-primary mb-3" href="{{ route('department.create') }}" role="button">Create department</a>
 
-    <table class="table table table-bordered border-dark table-hover">
+    <table id="example" class="table table table-bordered border-dark table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -21,6 +21,7 @@
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $department->name }}</td>
                     <td>
+                        <a class="btn btn-info" href="{{ route('department.show', $department) }}" role="button">Detail</a>
                         <a class="btn btn-warning" href="{{ route('department.edit', $department) }}" role="button">Edit</a>
                         <form method="POST" action="{{ route('department.destroy', $department) }}" class="d-inline">
                             @csrf

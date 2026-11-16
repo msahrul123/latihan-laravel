@@ -7,7 +7,7 @@
     @endif
     <a class="btn btn-primary mb-3" href="{{ route('lecturer.create') }}" role="button">Create lecturer</a>
 
-    <table class="table table table-bordered border-dark table-hover">
+    <table id="example" class="table table table-bordered border-dark table-hover">
         <thead>
             <tr>
                 <th scope="col">#</th>
@@ -21,7 +21,7 @@
                 <tr>
                     <th scope="row">{{ $loop->iteration }}</th>
                     <td>{{ $lecturer->name }}</td>
-                    <td>{{ $lecturer->department->name }}</td>
+                    <td>{{ $lecturer->department->name  }}</td>
                     <td>
                         <a class="btn btn-warning" href="{{ route('lecturer.edit', $lecturer) }}" role="button">Edit</a>
                         <form method="POST" action="{{ route('lecturer.destroy', $lecturer) }}" class="d-inline">
