@@ -24,11 +24,11 @@
                     <td>{{ $student->nim }}</td>
                     <td>
                         <a class="btn btn-warning" href="{{ route('student.edit', $student) }}" role="button">Edit</a>
-                        <form method="POST" action="{{ route('student.destroy', $student) }}"
-                        class="d-inline">
+                        <form method="POST" action="{{ route('student.destroy', $student) }}" class="d-inline">
                             @csrf
                             @method('delete')
-                             <button type="submit" class="btn btn-danger" onclick="return confirm('are you sure?')">delete</button>
+                            <button type="submit" class="btn btn-danger"
+                                onclick="return confirm('are you sure?')">delete</button>
                         </form>
                     </td>
                 </tr>
